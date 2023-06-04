@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594519311889",
+    "project_id": "park-empire",
+    "storage_bucket": "park-empire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594519311889:android:d3586104b5768938fd53b0",
+        "android_client_info": {
+          "package_name": "com.finik.park"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594519311889-huil7qirqgn7s1j4kf3e7oh269m4jo2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnsl86LFmk49Lj8M1MnE5XCYTaFR0TrpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594519311889-huil7qirqgn7s1j4kf3e7oh269m4jo2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
