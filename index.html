@@ -91,14 +91,14 @@
     }
 
     var script = document.createElement("script");
-    var unityInst;
+    //var unityInst;
     script.src = loaderUrl;
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         window.unityInstance = unityInstance;
-        unityInst = unityInstance;
+        //unityInst = unityInstance;
       }).catch((message) => {
         alert(message);
       });
@@ -108,7 +108,7 @@
     function showRewarded ()
     {
       vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
-      unityInst.SendMessage('AdsManager', 'Yandex_rewardedAd_OnUserEarnedReward', JSON.stringify(data.result));});
+      //unityInst.SendMessage('AdsManager', 'Yandex_rewardedAd_OnUserEarnedReward', JSON.stringify(data.result));});
     }
 
     jQuery(document).ready(function($) // страница прогружена
