@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Unity WebGL Player | Idle Park</title>
+  <title>Unity WebGL Player | Idle Casino</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -59,11 +59,11 @@
     }
 
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/park.loader.js";
+    var loaderUrl = buildUrl + "/1.loader.js";
     var config = {
-      dataUrl: buildUrl + "/park.data.unityweb",
-      frameworkUrl: buildUrl + "/park.framework.js.unityweb",
-        codeUrl: buildUrl + "/park.wasm.unityweb",
+      dataUrl: buildUrl + "/1.data",
+      frameworkUrl: buildUrl + "/1.framework.js",
+        codeUrl: buildUrl + "/1.wasm",
         streamingAssetsUrl: "StreamingAssets",
       companyName: "ZettaZed",
     productName: "Eta shtuka poka ne rabotaet, nu i ladno",
@@ -91,31 +91,28 @@
     }
 
     var script = document.createElement("script");
-    //var unityInst;
     script.src = loaderUrl;
     script.onload = () => {
       createUnityInstance(canvas, config, (progress) => {
         progressBarFull.style.width = 100 * progress + "%";
       }).then((unityInstance) => {
         window.unityInstance = unityInstance;
-        //unityInst = unityInstance;
       }).catch((message) => {
         alert(message);
       });
     };
     document.body.appendChild(script);
 
-    function showRewarded ()
-    {
-      //vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
-      //unityInst.SendMessage('AdsManager', 'Yandex_rewardedAd_OnUserEarnedReward', JSON.stringify(data.result));});
-    }
-
     jQuery(document).ready(function($) // страница прогружена
     {
       vkBridge.send('VKWebAppInit');
     });
+
+    function showRewarded ()
+    {
+      vkBridge.send('VKWebAppShowNativeAds', {ad_format:"reward"}).then(data => {console.log(data);
+      unityInstance.SendMessage('AdsManager', 'Yandex_rewardedAd_OnUserEarnedReward', JSON.stringify(data.result));});
+    }
   </script>
 </body>
-
 </html>
